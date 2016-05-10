@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)file:///C:/Users/Administrator/Desktop/Bootstrap%20Theme%20%20The%20Band%20.htm -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/bootstrap.min.css">
+<script src="{{ STATIC_URL }}html/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/stdtheme.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3-fix.css">
+<style>
+.btncon .btn-default {
+  padding: 12px;
+  text-decoration: none !important;
+  background-color: #555;
+  color: #f5f5f5 !important;
+  width: 49%;
+  transition: .3s;
+}
+
+.btncon .btn-default:hover,.btncon .btn-default:active {
+  background-color: #f1f1f1;
+  !important;
+  color: #222 !important;
+}
+
+.person {
+  border: 10px solid transparent;
+  margin-bottom: 25px;
+  width: 80%;
+  height: 80%;
+  opacity: 0.7;
+}
+
+.person:hover {
+  border-color: #f1f1f1;
+}
+
+.tooltip {
+  background-color: #2d2d30;
+  !important;
+}
+
+.carousel-inner.test > .item > img,
+.carousel-inner.test > .item > a > img {
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+  /* make all photos black and white */
+  
+  width: 100%;
+  /* Set width to 100% */
+  
+  margin: auto;
+}
+
+.w3-topnav {
+  z-index: 16 !important;
+}
+
+.blog.nav-tabs li a {
+  color: #777;
+  text-decoration: none !important;
+}
+
+.test .thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+
+.test .thumbnail p {
+  margin-top: 15px;
+  color: #555;
+}
+
+.test .btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #f1f1f1;
+  border-radius: 0;
+  transition: .2s;
+}
+
+.test .btn:hover,
+.btn:focus {
+  border: 1px solid #333;
+  background-color: #fff;
+  color: #000;
+}
+
+.modal-header,
+.modal-header h4,
+.modal-header .close {
+  background-color: #333;
+  color: white !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.modal-header,
+.modal-body {
+  padding: 40px 50px;
+}
+a.up-arrow:hover {
+  color: #777 !important;
+  text-decoration: none;
+}
+.test .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.test .list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.STYLE1 {font-size: 14px}
+</style>
+
+
+</head>
+<body>
+<div class="w3-container top" style="height:100px;">
+<div class="col-lg-3"><img src="{{ STATIC_URL }}html/images/logo.PNG" height="80"></div>
+<h1 class="col-lg-6" align="center">制造车间工区信息系统看板</h1>
+</div>
+
+<div class="w3-col w3-slim" id="leftmenu" style="padding-top: 44px; display: none;">
+
+<div id="leftmenuinner" style="padding-top: 44px;">
+<div class="w3-light-grey" style="margin-top:50px; width:200px;">
+<a href="javascript:void(0)" onClick="close_menu()" class="w3-closebtn w3-hide-large w3-large" style="padding:3px 12px;"></a>
+<h3 class="left" align="center"><span class="left_h2">看板导航</span></h3>
+<a target="_top" href="01.html"><div align="center" style="margin-right:20px;">工区简介</div></a>
+<a target="_top" href="02.html"><div align="center" style="margin-right:20px;">产品介绍</div></a>
+<a target="_top" href="03.html"><div align="center" style="margin-right:20px;">生产计划</div></a>
+<a target="_top" href="04.html"><div align="center" style="margin-right:20px;">人员职责</div></a>
+<a target="_top" href="05.html"><div align="center" style="margin-right:20px;">设备管理</div></a>
+<a target="_top" href="06.html"><div align="center" style="margin-right:20px;">工艺布局</div></a>
+<a target="_top" href="07.html"><div align="center" style="margin-right:20px;">工位危险源</div></a>
+<a target="_top" href="08.html"><div align="center" style="margin-right:20px;">改善提案</div></a>
+<a target="_top" href="0901.html"><div align="center" style="margin-right:20px;">合格率统计</div></a>
+
+
+
+<br><br></div></div></div>
+</div>
+<div class="col-lg-10" align="center">
+<div class="btncon">
+
+<a target="_blank" class="btn btn-default">工区：{{ model.name }}</a>
+<a target="_blank" class="btn btn-default">工作状态：{{ model.statusNow }}</a></div>
+</div>
+
+<div class="Backstage-main">
+        <iframe name="ifr" id="ifr" src="/screen/page/3" class="col-lg-10" style="margin-left:220px; height:700px">
+		</iframe>
+    </div>
+
+
+
+<hr>
+<div class="footer w3-container w3-white">
+<div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;"></div></div>
+<div class="w3-example" style="margin-top:10px;">
+<div class="col-lg-12" align="right">
+<h3 align="right" class="STYLE1">南京中车浦镇海泰制动设备有限公司</h3>
+<p align="right" class="STYLE1">CRRC NANJING PUZHEN HAITAI BRAKE EQUIPMENT CO..LTD</p>
+
+
+</div>
+<div class="w3-row w3-center w3-small"></div></div>
+<hr>
+<br>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</div>
+</body></html>

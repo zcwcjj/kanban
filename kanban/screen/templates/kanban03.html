@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)file:///C:/Users/Administrator/Desktop/Bootstrap%20Theme%20%20The%20Band%20.htm -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/stdtheme.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3-fix.css">
+<style>
+.btncon .btn-default {
+  padding: 12px;
+  text-decoration: none !important;
+  background-color: #555;
+  color: #f5f5f5 !important;
+  width: 49%;
+  transition: .3s;
+}
+
+.btncon .btn-default:hover,.btncon .btn-default:active {
+  background-color: #f1f1f1;
+  !important;
+  color: #222 !important;
+}
+
+.person {
+  border: 10px solid transparent;
+  margin-bottom: 25px;
+  width: 80%;
+  height: 80%;
+  opacity: 0.7;
+}
+
+.person:hover {
+  border-color: #f1f1f1;
+}
+
+.tooltip {
+  background-color: #2d2d30;
+  !important;
+}
+
+.carousel-inner.test > .item > img,
+.carousel-inner.test > .item > a > img {
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+  /* make all photos black and white */
+  
+  width: 100%;
+  /* Set width to 100% */
+  
+  margin: auto;
+}
+
+.w3-topnav {
+  z-index: 16 !important;
+}
+
+.blog.nav-tabs li a {
+  color: #777;
+  text-decoration: none !important;
+}
+
+.test .thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+
+.test .thumbnail p {
+  margin-top: 15px;
+  color: #555;
+}
+
+.test .btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #f1f1f1;
+  border-radius: 0;
+  transition: .2s;
+}
+
+.test .btn:hover,
+.btn:focus {
+  border: 1px solid #333;
+  background-color: #fff;
+  color: #000;
+}
+
+.modal-header,
+.modal-header h4,
+.modal-header .close {
+  background-color: #333;
+  color: white !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.modal-header,
+.modal-body {
+  padding: 40px 50px;
+}
+a.up-arrow:hover {
+  color: #777 !important;
+  text-decoration: none;
+}
+.test .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.test .list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.STYLE1 {font-size: 14px}
+</style>
+
+
+</head>
+<body>
+
+
+
+<div class="container-responsive">
+<div class="col-lg-12" style="margin-top:10px;">
+  <table class="table table-bordered">
+	
+    <tbody>
+	 <tr>
+	 	<td class="col-lg-6" style="margin-left:5px; margin-top:10px;"><h3 align="center">每日生产计划</h3></td>
+		<td class="col-lg-6" style="margin-left:5px; margin-top:10px;"><h3 align="center">生产效率统计</h3></td>
+	 </tr>
+	 
+	 <tr>
+	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:400px;"><table class="table table-bordered">
+          <tr>
+            <td rowspan="2" class="col-lg-2"><div align="center">
+              <p>产品</p>
+              <p>名称</p>
+            </div></td>
+            <td colspan="4" class="col-lg-10"><div align="center">项目内容</div></td>
+          </tr>
+          <tr>
+            <td class="col-lg-4 col-sm-4 col-md-4"><div align="center">计划产量</div></td>
+            <td class="col-lg-4 col-sm-4 col-md-4"><div align="center">已完成</div></td>
+            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center">是否新造</div></td>
+          </tr>
+          {% for singleplan in planList %}
+          <tr>
+            <td><div align="center">{{ singleplan.product.name }}</div></td>
+            <td><div align="center">{{ singleplan.plan }}</div></td>
+            <td> <div align="center">{{ singleplan.excuted }}</div></td>
+            <td><div align="center">{{ singleplan.isnew }}</div></td>
+          </tr>
+          {% endfor %}
+        </table></td>
+
+
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:400px;">
+		
+		<div style="width:50%; height:25%;padding:20px; border:2px; float:left">
+		  <div align="center" class="STYLE2 w3-large"><strong>新造项目		    </strong></div>
+
+      {%  for singleplan in planList %}
+        {% if singleplan.isnew %}
+		      <div class="progress progress-striped active">
+          <div align="center"></div>
+          <div class="progress-bar progress-bar-success" role="progressbar" 
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
+                      style="width: {{ singleplan.excuted}}%;">
+          <span class="sr-only">90% 完成（成功）</span>
+          {{ singleplan.product.name }}
+          </div>
+          </div>
+        {% endif %}
+      {%  endfor %}		
+</div>
+	
+		
+		<div style="width:50%; height:25%;padding:20px; border:2px; float:right">
+		  <div align="center" class="STYLE2 w3-large"><strong>检修项目		    </strong></div>
+		  <div class="progress progress-striped active">
+          <div align="center"></div>
+          <div class="progress-bar progress-bar-success" role="progressbar" 
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
+                      style="width: 50%;">
+          <span class="sr-only">90% 完成（成功）</span>EP阀
+          </div>
+        </div>
+		
+		<div class="progress progress-striped active">
+          <div align="center"></div>
+          <div class="progress-bar progress-bar-info" role="progressbar" 
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
+                      style="width: 90%;">
+          <span class="sr-only">90% 完成（成功）</span>FD-1
+          </div>
+        </div>
+		
+		<div class="progress progress-striped active">
+          <div align="center"></div>
+          <div class="progress-bar progress-bar-danger" role="progressbar" 
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
+                      style="width: 10%;">
+          <span class="sr-only">90% 完成（成功）</span>B11
+          </div>
+        </div>
+		
+	 </div>
+		
+		
+		
+		</td>
+		
+		
+		
+		
+		
+		
+	</tr>
+	</tbody>
+</table>
+   
+<br>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</div>
+</body></html>

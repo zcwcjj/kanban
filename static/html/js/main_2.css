@@ -1,0 +1,260 @@
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	background: rgb(255, 255, 255); font-family: "ËÎÌו", Arial; font-size: 12px;
+}
+
+div {
+	margin: 0px; padding: 0px;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+img {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+ol {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+dl {
+	margin: 0px; padding: 0px;
+}
+dt {
+	margin: 0px; padding: 0px;
+}
+dd {
+	margin: 0px; padding: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+span {
+	margin: 0px; padding: 0px;
+}
+a {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: 0px currentColor; border-image: none; display: block;
+}
+input {
+	border: 0px currentColor; border-image: none;
+}
+em {
+	font-style: normal;
+}
+font {
+	color: rgb(51, 51, 51); font-size: 12px;
+}
+img {
+	margin: 0px; padding: 0px; border: 0px currentColor; border-image: none;
+}
+li {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+dl {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+i {
+	margin: 0px; padding: 0px;
+}
+.clear {
+	line-height: 0px; clear: both; font-size: 0px; display: block;
+}
+.l {
+	float: left;
+}
+.h08 {
+	height: 8px; line-height: 0px; font-size: 0px; display: block;
+}
+.h60 {
+	height: 60px; line-height: 0px; font-size: 0px; display: block;
+}
+.h10 {
+	height: 10px; line-height: 0px; font-size: 0px; display: block;
+}
+.h20 {
+	height: 20px; line-height: 0px; font-size: 0px; display: block;
+}
+.h16 {
+	height: 16px; line-height: 0px; font-size: 0px; display: block;
+}
+.none {
+	display: none;
+}
+input {
+	
+}
+button {
+	
+}
+select {
+	
+}
+textarea {
+	
+}
+html {
+	padding: 71px 0px 1px; overflow: hidden; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+form
+{
+    height:100%;
+}
+body {
+	height: 100%;
+}
+.Backstage-top {
+	background: url("../images/b_1.jpg") repeat-x; height: 71px; margin-top: -71px; position: relative;
+}
+.Backstage-side {
+	background: url("../images/b_3.jpg") no-repeat top; border: 1px solid rgb(166, 193, 210); border-image: none; width: 216px; height: 100%; overflow: auto; margin-right: 0px !important; float: left; position: relative; -ms-overflow-x: hidden; -ms-overflow-y: auto;
+}
+.Backstage-main {
+	background: 0px; height: 100%; overflow: auto; border-left-color: rgb(240, 248, 253); border-left-width: 6px; border-left-style: solid;
+}
+.Backstage-bottom {
+	height: 1px; clear: both; position: relative;
+}
+.top-lab-1 {
+	background: url("../images/b_2.jpg") no-repeat left; width: 100%; height: 71px;
+}
+.top-lab-1 a {
+	padding-top: 8px; padding-left: 18px;
+}
+.top-lab-1 .top-lab-1-s1 {
+	top: 0px; right: 0px; position: absolute;
+}
+.top-lab-1 .top-lab-1-s1 ul li {
+	color: rgb(255, 255, 255); padding-top: 10px; padding-right: 8px;
+}
+.top-lab-1 .top-lab-1-s1 ul li a {
+	background: url("../images/png_2.png") no-repeat; height: 18px; color: rgb(187, 218, 239); padding-top: 2px; padding-left: 20px; font-weight: bold; display: block;
+}
+.Admin-d20 {
+	background: url("../images/png_3.png") no-repeat; margin: 10px auto 10px 7px; width: 201px; height: 63px;
+}
+.Admin-d20 .dp {
+	padding-top: 8px; padding-left: 8px;
+}
+.Admin-d20 .dp .p10 {
+	background: url("../images/png_4.png") no-repeat; width: 47px; height: 48px;
+}
+.Admin-d20 .dul {
+	padding-left: 8px;
+}
+.Admin-d20 .dul ul {
+	padding-top: 14px;
+}
+.Admin-d20 .dul ul li {
+	color: rgb(60, 92, 137); line-height: 18px;
+}
+.Admin-d20 .dul ul li a {
+	color: rgb(41, 112, 213);
+}
+
+
+
+
+.accordion li > .sub-menu {
+	display: none;
+}
+.accordion li:target > .sub-menu {
+	display: block;
+}
+#wrapper-250 .accordion .files .a1 {
+	background: url("../images/left_nav_bg.jpg") repeat-x top; height: 39px; color: rgb(53, 65, 81); line-height: 39px; padding-left: 10px; font-family: "ËÎÌו"; font-size: 14px; font-weight: bold; display: block;
+}
+#wrapper-250 .accordion .files .sub-menu {
+	background: rgb(237, 238, 240);
+}
+#wrapper-250 .accordion .files .sub-menu li {
+	background: url("../images/sub_menu_li_bg.jpg") repeat-x bottom; height: 39px; line-height: 39px; padding-left: 25px;
+}
+#wrapper-250 .p10 {
+	background: url("../images/nav_bottom.jpg") no-repeat; width: 218px; height: 30px;
+}
+
+
+
+
+.Navlist-d20 {
+	background: rgb(245, 249, 254); width: 201px; padding-left: 7px;
+}
+#wrapper-250 .accordion .files {
+	margin-bottom: 8px;
+}
+#wrapper-250 .accordion .files .a1 {
+	background: url("../images/b_4.jpg") no-repeat; width: 201px; height: 30px; color: rgb(255, 255, 255); line-height: 30px;
+}
+#wrapper-250 .accordion .files .a1:hover {
+	text-decoration: none;
+}
+#wrapper-250 .accordion .files .a1 .em_1 {
+	background: url("../images/png_5.png") no-repeat; width: 24px; height: 24px; margin-top: -4px; margin-right: 8px; vertical-align: middle; display: inline-block;
+}
+#wrapper-250 .accordion .files .a1 .em_2 {
+	background: url("../images/png_6.png") no-repeat; width: 24px; height: 24px; margin-top: -4px; margin-right: 8px; vertical-align: middle; display: inline-block;
+}
+#wrapper-250 .accordion .files .a1 .em_3 {
+	background: url("../images/png_7.png") no-repeat; width: 24px; height: 24px; margin-top: -4px; margin-right: 8px; vertical-align: middle; display: inline-block;
+}
+#wrapper-250 .accordion .files .a1 .em_4 {
+	background: url("../images/png_8.png") no-repeat; width: 24px; height: 24px; margin-top: -4px; margin-right: 8px; vertical-align: middle; display: inline-block;
+}
+#wrapper-250 .accordion .files .a1 .em_5 {
+	background: url("../images/png_9.png") no-repeat; width: 24px; height: 24px; margin-top: -4px; margin-right: 8px; vertical-align: middle; display: inline-block;
+}
+#wrapper-250 .accordion .files .sub-menu {
+	background: rgb(245, 249, 254);
+}
+#wrapper-250 .accordion .files .sub-menu li {
+	background: url("../images/b_5.jpg") no-repeat; margin: 2px 0px; height: 31px; line-height: 31px; display:none;
+}
+#wrapper-250 .accordion .files .sub-menu li a {
+	color: rgb(84, 120, 142);
+}
+#wrapper-250 .accordion .files .sub-menu li a:hover {
+	color: rgb(252, 112, 10); font-weight: bold; text-decoration: none;
+}
+#wrapper-250 .accordion .files .sub-menu li a.hover {
+	color: rgb(252, 112, 10); font-weight: bold;
+}
+
+#div_mod_pwd ul { width:260px; height:80px; margin:20px auto;}
+#div_mod_pwd ul li {line-height:40px;}
+#div_mod_pwd ul li input {border:1px solid #d2d2d2;}
