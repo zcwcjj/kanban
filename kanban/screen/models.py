@@ -23,6 +23,9 @@ class ProductExecuting(models.Model):
 	excuted = models.IntegerField('已生产数量')
 	isnew = models.BooleanField("是否新造", default=True)
 
+	def __str__(self):
+		return self.product.name +"\t"+ str(self.produce_date)
+
 
 class EquipmentManager(models.Model):
 	status = models.CharField('状态', max_length=30)

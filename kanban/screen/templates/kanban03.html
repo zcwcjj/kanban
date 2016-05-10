@@ -168,7 +168,7 @@ a.up-arrow:hover {
           <div align="center"></div>
           <div class="progress-bar progress-bar-success" role="progressbar" 
                       aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
-                      style="width: {{ singleplan.excuted}}%;">
+                      style="width: {% widthratio singleplan.excuted singleplan.plan 100 %}%;">
           <span class="sr-only">90% 完成（成功）</span>
           {{ singleplan.product.name }}
           </div>
@@ -180,32 +180,21 @@ a.up-arrow:hover {
 		
 		<div style="width:50%; height:25%;padding:20px; border:2px; float:right">
 		  <div align="center" class="STYLE2 w3-large"><strong>检修项目		    </strong></div>
-		  <div class="progress progress-striped active">
+		  {%  for singleplan in planList %}
+        {% if not singleplan.isnew %}
+          <div class="progress progress-striped active">
           <div align="center"></div>
           <div class="progress-bar progress-bar-success" role="progressbar" 
-                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
-                      style="width: 50%;">
-          <span class="sr-only">90% 完成（成功）</span>EP阀
+                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50"   
+                      style="width: {% widthratio singleplan.excuted singleplan.plan 100 %}%;">
+          <span class="sr-only">90% 完成（成功）</span>
+          {{ singleplan.product.name }}
           </div>
-        </div>
+          </div>
+        {% endif %}
+      {%  endfor %} 
 		
-		<div class="progress progress-striped active">
-          <div align="center"></div>
-          <div class="progress-bar progress-bar-info" role="progressbar" 
-                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
-                      style="width: 90%;">
-          <span class="sr-only">90% 完成（成功）</span>FD-1
-          </div>
-        </div>
 		
-		<div class="progress progress-striped active">
-          <div align="center"></div>
-          <div class="progress-bar progress-bar-danger" role="progressbar" 
-                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="50" 	
-                      style="width: 10%;">
-          <span class="sr-only">90% 完成（成功）</span>B11
-          </div>
-        </div>
 		
 	 </div>
 		

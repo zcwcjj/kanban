@@ -4,10 +4,22 @@
 
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/bootstrap.min.css">
 <script src="{{ STATIC_URL }}html/js/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}html/js/jquery-1.7.2.min.js"></script>
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/stdtheme.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3-fix.css">
+<script type="text/javascript">
+  
+function choose(page)
+{
+  baseurl = "/screen/page/" + page.toString();
+  $("#ifr").attr("src",baseurl);
+
+
+}
+
+</script>
 <style>
 .btncon .btn-default {
   padding: 12px;
@@ -114,6 +126,7 @@ a.up-arrow:hover {
   border-bottom-left-radius: 0;
 }
 .STYLE1 {font-size: 14px}
+.STYLE2 {font-family: "新宋体"}
 </style>
 
 
@@ -121,24 +134,24 @@ a.up-arrow:hover {
 <body>
 <div class="w3-container top" style="height:100px;">
 <div class="col-lg-3"><img src="{{ STATIC_URL }}html/images/logo.PNG" height="80"></div>
-<h1 class="col-lg-6" align="center">制造车间工区信息系统看板</h1>
+<h1 align="center" class="col-lg-6 STYLE2"><strong>制造车间工区信息系统看板</strong></h1>
 </div>
 
 <div class="w3-col w3-slim" id="leftmenu" style="padding-top: 44px; display: none;">
 
 <div id="leftmenuinner" style="padding-top: 44px;">
-<div class="w3-light-grey" style="margin-top:50px; width:200px;">
+<div class="w3-light-grey" style="margin-top:55px; width:200px; height:800px;">
 <a href="javascript:void(0)" onClick="close_menu()" class="w3-closebtn w3-hide-large w3-large" style="padding:3px 12px;"></a>
-<h3 class="left" align="center"><span class="left_h2">看板导航</span></h3>
-<a target="_top" href="01.html"><div align="center" style="margin-right:20px;">工区简介</div></a>
-<a target="_top" href="02.html"><div align="center" style="margin-right:20px;">产品介绍</div></a>
-<a target="_top" href="03.html"><div align="center" style="margin-right:20px;">生产计划</div></a>
-<a target="_top" href="04.html"><div align="center" style="margin-right:20px;">人员职责</div></a>
-<a target="_top" href="05.html"><div align="center" style="margin-right:20px;">设备管理</div></a>
-<a target="_top" href="06.html"><div align="center" style="margin-right:20px;">工艺布局</div></a>
-<a target="_top" href="07.html"><div align="center" style="margin-right:20px;">工位危险源</div></a>
-<a target="_top" href="08.html"><div align="center" style="margin-right:20px;">改善提案</div></a>
-<a target="_top" href="0901.html"><div align="center" style="margin-right:20px;">合格率统计</div></a>
+<h1 class="left" align="center"><span class="left_h2"><strong>看板导航</strong></span></h1>
+<a target="_top" href="javascript:void(0);" onClick="choose('1')"><div align="center" style="margin-right:20px;"><h3>工区简介</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('2')"><div align="center" style="margin-right:20px;"><h3>产品介绍</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('3')"><div align="center" style="margin-right:20px;"><h3>生产计划</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('4')"><div align="center" style="margin-right:20px;"><h3>人员职责</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('5')"><div align="center" style="margin-right:20px;"><h3>设备管理</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('6')"><div align="center" style="margin-right:20px;"><h3>工艺布局</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('7')"><div align="center" style="margin-right:20px;"><h3>工位危险源</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('8')"><div align="center" style="margin-right:20px;"><h3>改善提案</h3></div></a>
+<a target="_top" href="javascript:void(0);" onClick="choose('9')"><div align="center" style="margin-right:20px;"><h3>合格率统计</h3></div></a>
 
 
 
@@ -147,14 +160,14 @@ a.up-arrow:hover {
 <div class="col-lg-10" align="center">
 <div class="btncon">
 
-<a target="_blank" class="btn btn-default">工区：{{ model.name }}</a>
-<a target="_blank" class="btn btn-default">工作状态：{{ model.statusNow }}</a></div>
+<a target="_blank" class="btn btn-default"><h3>工区：{{ model.name }}</h3></a>
+<a target="_blank" class="btn btn-default"><h3>工作状态：{{ model.statusNow }}</h3></a></div>
 </div>
 
 <div class="Backstage-main">
         <iframe name="ifr" id="ifr" src="/screen/page/3" class="col-lg-10" style="margin-left:220px; height:700px">
 		</iframe>
-    </div>
+</div>
 
 
 

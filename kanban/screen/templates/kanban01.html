@@ -141,7 +141,7 @@ a.up-arrow:hover {
         
         <td class="col-lg-12" style="margin-top:10px; height:150px;"><div align="center">
           <p><h3>工区简介</h3></p>
-          <p align="left">制动控制装置工区目前主要分为制动配线、制动辅线、气路板、翻转台、阀总装、整体实验七步工序，共设xx个工位。xxxx年完成产线改造，引进或购入了多台试验设备，目前产能达到xx台/天。</p>
+          <p align="left">{{ model.introduce }} </p>
         </div></td>
         
       </tr>
@@ -161,9 +161,9 @@ a.up-arrow:hover {
 	 </tr>
 	 
 	 <tr>
-	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"></td>
+	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img src=' {{model.process_discipline.url}}' ></td>
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img src=' {{model.process_discipline.url}}' ></td>
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img src=' {{model.important_change.url}}' ></td>
 	</tr>
 	</tbody>
 </table>

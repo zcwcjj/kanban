@@ -21,6 +21,7 @@ def localtionSettedOrRedirect(f):
 			return f(*args, **kwargs)
 
 		except Exception as e:
+			print("------------------",e)
 			return HttpResponseRedirect("http://10.19.6.75:8000/screen/index")
 	return func
 
@@ -33,8 +34,8 @@ def ajax_get_data(request):
 @localtionSettedOrRedirect
 def get_page(request,page):
 	if page != None:
-		templateList=['frame.html','kanban01.html', 'kanban02.html', 'kanban03.html', 'kanban4.html', 'kanban5.html', \
-		'kanban6.html', 'kanban7.html', 'kanban8.html', 'kanban9.html']
+		templateList=['frame.html','kanban01.html', 'kanban02.html', 'kanban03.html', 'kanban04.html', 'kanban05.html', \
+		'kanban06.html', 'kanban07.html', 'kanban08.html', 'kanban09.html']
 		
 		try:
 			pageIndex = int(page)
@@ -42,6 +43,7 @@ def get_page(request,page):
 			temp = loader.get_template(templateList[pageIndex])
 			model = Area.objects.filter(id=areaid)[0]
 			planList = ProductExecuting.objects.filter(Area__id=areaid).filter(produce_date=timezone.now())
+
 
 		except Exception as e:
 			# should return 404
