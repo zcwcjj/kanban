@@ -145,14 +145,11 @@ a.up-arrow:hover {
         
       </tr>
       <tr>
-        <td class="col-lg-4" style="margin-top:10px; height:150px;" rowspan="3"><p>1.xx</p>
-        <p>2.xx</p>
+        <td class="col-lg-4" style="margin-top:10px; height:150px;" rowspan="3"><img src='{{ model.improve_proposal.url }}'></td>
         <td class="col-lg-8" style="margin-top:10px; height:350px;" rowspan="7"><p>改善前：</p>
-          <p>1.</p>
-          <p>2.</p>
+          <img src='{{ model.improve_proposal.url }}'>
           <p>改善后：</p>
-          <p>1.</p>
-          <p>2.</p>
+          <img src='{{ model.improve_proposal.url }}'></td>
         </tr>
       <tr>
          
@@ -169,7 +166,7 @@ a.up-arrow:hover {
            </div>
       </tr>
 	   <tr>
-         <td class="col-lg-4" style="margin-top:10px; height:150px;" rowspan="3">=标准工位数/工区总工位数</th>
+         <td class="col-lg-4" style="margin-top:10px; height:150px;" rowspan="3">{{ model.attainment_rate }}=标准工位数/工区总工位数</th>
         
         
            <p>&nbsp;</p>

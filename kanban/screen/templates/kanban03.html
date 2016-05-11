@@ -133,7 +133,7 @@ a.up-arrow:hover {
 	 </tr>
 	 
 	 <tr>
-	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:400px;"><table class="table table-bordered">
+	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px;"><table class="table table-bordered">
           <tr>
             <td rowspan="2" class="col-lg-2"><div align="center">
               <p>产品</p>
@@ -143,24 +143,29 @@ a.up-arrow:hover {
           </tr>
           <tr>
             <td class="col-lg-4 col-sm-4 col-md-4"><div align="center">计划产量</div></td>
-            <td class="col-lg-4 col-sm-4 col-md-4"><div align="center">已完成</div></td>
-            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center">是否新造</div></td>
+            <td class="col-lg-3 col-sm-3 col-md-3"><div align="center">已完成</div></td>
+            <td class="col-lg-3 col-sm-3 col-md-3"><div align="center">是否新造</div></td>
           </tr>
           {% for singleplan in planList %}
           <tr>
             <td><div align="center">{{ singleplan.product.name }}</div></td>
             <td><div align="center">{{ singleplan.plan }}</div></td>
             <td> <div align="center">{{ singleplan.excuted }}</div></td>
-            <td><div align="center">{{ singleplan.isnew }}</div></td>
+            <td><div align="center">{%  if singleplan.isnew  %}
+            新造
+            {% else %}
+            检修
+            {% endif %}
+            </div></td>
           </tr>
           {% endfor %}
         </table></td>
 
 
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:400px;">
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px;">
 		
 		<div style="width:50%; height:25%;padding:20px; border:2px; float:left">
-		  <div align="center" class="STYLE2 w3-large"><strong>新造项目		    </strong></div>
+		  <div align="center" class="STYLE2 w3-large"><strong><h3>新造项目</h3>		    </strong></div>
 
       {%  for singleplan in planList %}
         {% if singleplan.isnew %}
@@ -179,7 +184,7 @@ a.up-arrow:hover {
 	
 		
 		<div style="width:50%; height:25%;padding:20px; border:2px; float:right">
-		  <div align="center" class="STYLE2 w3-large"><strong>检修项目		    </strong></div>
+		  <div align="center" class="STYLE2 w3-large"><strong><h3>检修项目</h3>		    </strong></div>
 		  {%  for singleplan in planList %}
         {% if not singleplan.isnew %}
           <div class="progress progress-striped active">

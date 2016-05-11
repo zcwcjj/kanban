@@ -20,6 +20,10 @@
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/stdtheme.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3-fix.css">
 <style>
+.overview {
+width:490px;
+height:200px;
+}
 .btncon .btn-default {
   padding: 12px;
   text-decoration: none !important;
@@ -161,9 +165,9 @@ a.up-arrow:hover {
 	 </tr>
 	 
 	 <tr>
-	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img src=' {{model.process_discipline.url}}' ></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img src=' {{model.process_discipline.url}}' ></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img src=' {{model.important_change.url}}' ></td>
+	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img class="overview" src=' {{model.process_discipline.url}}' ></td>
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img class="overview" src=' {{model.process_discipline.url}}' ></td>
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img class="overview" src=' {{model.important_change.url}}'></td>
 	</tr>
 	</tbody>
 </table>
