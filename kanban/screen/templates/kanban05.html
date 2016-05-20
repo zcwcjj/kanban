@@ -135,38 +135,29 @@ a.up-arrow:hover {
 	 </tr>
 	 
 	 <tr>
-	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><p>设备状态：正常</p>
+	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:680px; line-height:1.5"><p>设备状态：正常</p>
  	    <p>设备有效期：20xx年xx月xx日</p>
  	    <p>设备点检：</p></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><p>物料状态：正常</p>
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:680px; line-height:1.5"><p>物料状态:
+    {% if materialerror  %}
+      <span  class="text-danger" > 异常 </span>
+    {% else %}
+      <span  class="text-success"> 正常 </span>
+    {% endif %}
+
+    </p>
 	    <p>缺料统计：</p>
 	    <table class="table table-bordered">
+      {%  for m in material%}
           <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td style="line-height:1.5">{{m.code}}</td>
+            <td style="line-height:1.5">{{m.name}}</td>
+            <td style="line-height:1.5">{% if m.isProceed %} 已响应 {% else %} 等待响应 {% endif %}
           </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
+      {% endfor %}
+      
         </table>	    <p>&nbsp;</p></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;">
+		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:680px;">
 		<table class="table table-bordered">
           <tr>
             <td class="col-lg-2"><div align="center">序号</div></td>
@@ -223,7 +214,7 @@ a.up-arrow:hover {
 
 
 
-<hr>
+
     
 <br>
 <!--[if lt IE 9]>

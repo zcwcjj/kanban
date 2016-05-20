@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.core import serializers
 from django.http import HttpResponse,HttpResponseRedirect
-from .models import  *
+from .models import *
 from django.template import Context, Template, loader
 from django.conf import settings
 from django.utils import timezone
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -31,6 +33,7 @@ def ajax_get_data(request):
 	return HttpResponse('%s({"name":"%s"})' % (request.GET["callback"], json_data), content_type="application/json")
 
 # 接受?page=xxx的方法
+
 @localtionSettedOrRedirect
 def get_page(request,page):
 	if page != None:
@@ -41,33 +44,51 @@ def get_page(request,page):
 			pageIndex = int(page)
 			areaid = request.COOKIES["areaid"]
 			temp = loader.get_template(templateList[pageIndex])
-			model = Area.objects.filter(id=areaid)[0]
+			model = Area.objects.filter(id=areaid).filter(avaliable=True)
+			if len(model) > 0:
+				model = model[0]
+			else:
+				model = None
+			materialerror = False
 			planList = ProductExecuting.objects.filter(Area__id=areaid).filter(produce_date=timezone.now())
-
-
+			if pageIndex == 5:
+				materialManager = MaterialManager.objects.filter(area__id=areaid).filter(
+					 Q(publishTime__gt=timezone.now().date())| Q(isProceed=False)
+					).order_by('isProceed')
+				if len(MaterialManager.objects.filter(area__id=areaid).filter(isProceed=False)) > 0:
+					materialerror = True
+			else:
+				materialManager = None
+			
 		except Exception as e:
 			# should return 404
 			print("--------",e)
 			pass
 		else:
-			context = {'STATIC_URL': settings.STATIC_URL,'model': model, 'planList': planList}
+			context = {'STATIC_URL': settings.STATIC_URL,'model': model, 'planList': planList, \
+			'material':materialManager, 'materialerror':materialerror}
 			
 		finally:
 			return HttpResponse(temp.render(context))
 
 
 def choose_area(request):
-	temp = loader.get_template('area.html')
-	areas = Area.objects.all()
+	temp = loader.get_template('SelectWorkspace.html')
+	areas = Area.objects.all().filter(avaliable=True)
 	context = {"arealist":areas, 'STATIC_URL': settings.STATIC_URL}
 	httpR = HttpResponse(temp.render(context))
-	httpR.set_cookie("areaid", "1", 100000)
+	# httpR.set_cookie("areaid", "1", 100000)
 	return httpR
 	
-def welcome(request):
-	temp = loader.get_template('welcome.html')
-	areas = Area.objects.all()
-	context = {"arealist":areas, 'STATIC_URL': settings.STATIC_URL}
-	httpR = HttpResponse(temp.render(context))
+def getstatus(request):
+	areaid = request.COOKIES["areaid"]
+	funcname = request.GET["callback"]
+	model = Area.objects.filter(id=areaid).filter(avaliable=True)
+	if len(model) > 0:
+		model = model[0]
+	else:
+		model = None
+	
+	httpR = HttpResponse("%s(\"%s\")" % (funcname,str(model.statusNow)))
 	# httpR.set_cookie("areaid", "1", 100000)
 	return httpR

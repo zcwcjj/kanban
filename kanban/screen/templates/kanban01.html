@@ -4,19 +4,8 @@
 
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/font-awesome.min.css">
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,ASP,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
-<meta name="Description" content="Well organized and easy to understand Web bulding tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
 <link rel="icon" href="http://w3schools.bootcss.com/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3.css">
-
-
-
-
-
-
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/stdtheme.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3-fix.css">
 <style>
@@ -143,39 +132,46 @@ a.up-arrow:hover {
     <tbody>
 	 <tr>
         
-        <td class="col-lg-12" style="margin-top:10px; height:150px;"><div align="center">
+        <td class="col-lg-12" style="margin-top:10px; height:150px;">
+        <div align="center">
           <p><h3>工区简介</h3></p>
-          <p align="left">{{ model.introduce }} </p>
-        </div></td>
+          <p align="left" style="line-height:1.5">{{ model.introduce }} </p>
+        </div>
+        </td>
         
-      </tr>
+    </tr>
 
     </tbody>
   </table>
-<hr>
+</div>
+</div>
+
 <div class="container-responsive">
 <div class="col-lg-12" style="margin-top:10px;">
   <table class="table table-bordered">
 	
     <tbody>
 	 <tr>
-	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px;"><h3 align="center">工艺纪律检查</h3></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px;"><h3 align="center">安全十字图</h3></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px;"><h3 align="center">重大变更或整改</h3></td>
+	 	<td class="col-lg-4" style="margin-top:10px;"><h3 align="center">工艺纪律检查</h3></td>
+		<td class="col-lg-4" style="margin-top:10px;"><h3 align="center">安全十字图</h3></td>
+		<td class="col-lg-4" style="margin-top:10px;"><h3 align="center">重大变更或整改</h3></td>
 	 </tr>
 	 
 	 <tr>
-	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img class="overview" src=' {{model.process_discipline.url}}' ></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img class="overview" src=' {{model.process_discipline.url}}' ></td>
-		<td class="col-lg-4" style="margin-left:5px; margin-top:10px; height:200px;"><img class="overview" src=' {{model.important_change.url}}'></td>
+	 	<td class="col-lg-4" style="margin-top:10px; height:482px;"><img class="overview" src=' {{model.process_discipline.url}}' ></td>
+		<td class="col-lg-4" style="margin-top:10px; height:482px;"><img class="overview" src=' {{model.process_discipline.url}}' ></td>
+		<td class="col-lg-4" style="margin-top:10px; height:482px;"><img class="overview" src=' {{model.important_change.url}}'></td>
 	</tr>
 	</tbody>
 </table>
-    
+</div>
+</div> 
+
+
 <br>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
 <![endif]-->
-</div>
+
 </body></html>

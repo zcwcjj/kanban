@@ -4,19 +4,7 @@
 
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/font-awesome.min.css">
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,ASP,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
-<meta name="Description" content="Well organized and easy to understand Web bulding tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
-<link rel="icon" href="http://w3schools.bootcss.com/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3.css">
-
-
-
-
-
-
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/stdtheme.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3-fix.css">
 <style>
@@ -143,7 +131,7 @@ a.up-arrow:hover {
         <td class="col-lg-6" style="margin-top:10px;" ><div align="center"><h3>现场异常情况统计（当月）</h3></div></td>
   	</tr>
    </tbody>
-</table>
+  </table>
 </div>
 
 <div class="container-responsive">
@@ -153,8 +141,8 @@ a.up-arrow:hover {
     <thead>
 	<tbody>
 	 <tr>
-        <td class="col-lg-6" style="margin-top:10px; height:200px;" rowspan="7"><div align="center"><img src='{{ model.pass_rate.url }}' height="240px"></div></td>
-        <td class="col-lg-6" style="margin-top:10px; height:200px;" rowspan="7"><div align="center"><img src='{{ model.exception.url }}' height="240px"></div></td>
+        <td class="col-lg-6" style="margin-top:10px; height:240px;" rowspan="7"><div align="center"><img src='{{ model.pass_rate.url }}' height="260px;"></div></td>
+        <td class="col-lg-6" style="margin-top:10px; height:240px;" rowspan="7"><div align="center"><img src='{{ model.exception.url }}' height="260px;"></div></td>
         
       </tr>
       <tr>
@@ -197,7 +185,7 @@ a.up-arrow:hover {
   <table class="table table-bordered">
     <thead>
 	 <tr>
-        <td class="col-lg-3" style="margin-top:10px; height:200px;" rowspan="7"><div align="center">
+        <td class="col-lg-2" style="margin-top:10px; height:240px;" rowspan="7"><div align="center">
           <h3><p>典</p>
           <p>型</p>
           <p>质</p>
@@ -205,7 +193,8 @@ a.up-arrow:hover {
           <p>问</p>
           <p>题</p></h3>
         </div></td>
-        <td class="col-lg-9" style="margin-top:10px; height:200px;" rowspan="7"><div align="center"><img src='{{ model.typical_question.url }}'  height="240px"></div></td>
+        <td class="col-lg-10" style="margin-top:10px; height:240px;" rowspan="7"><div align="center"><img src='{{ model.typical_question.url }}' height="272px;"></div>
+        </td>
         
       </tr>
       <tr>
@@ -235,9 +224,7 @@ a.up-arrow:hover {
     </tbody>
   </table>
 
-<hr>
-
-    
+  
 <br>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

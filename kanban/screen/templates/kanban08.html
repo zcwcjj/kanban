@@ -4,22 +4,11 @@
 
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/font-awesome.min.css">
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,ASP,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
-<meta name="Description" content="Well organized and easy to understand Web bulding tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
-<link rel="icon" href="http://w3schools.bootcss.com/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3.css">
-
-
-
-
-
-
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/stdtheme.css">
 <link rel="stylesheet" href="http://10.19.6.75/static/html/css/w3-fix.css">
 <style>
+
 .btncon .btn-default {
   padding: 12px;
   text-decoration: none !important;
@@ -127,67 +116,48 @@ a.up-arrow:hover {
 .STYLE2 {font-size: 16px}
 .STYLE3 {font-weight: bold}
 </style>
-
-
 </head>
+
 <body>
 
-
 <div class="container-responsive">
-<div class="col-lg-12" style="margin-top:10px;">
-  <table class="table table-bordered">
-    <thead>
+<div class="col-lg-12" style="margin-top:20px">
+
     <table class="table table-bordered">
     <thead>
-	 <tr>
-        <td class="col-lg-4" style="margin-top:10px; height:50px;"><div align="center"><h3>改善提案</h3></div></td>
-        <td class="col-lg-8" style="margin-top:10px; height:50px;"><div align="center"><h3>改善效果展示</h3></div></td>
+	    <tr>
+        <td class="col-lg-4" style="margin-top:10px"><div align="center"><h3>改善提案</h3></div></td>
+        <td class="col-lg-8" style="margin-top:10px"><div align="center"><h3>改善效果展示</h3></div></td>
         
       </tr>
       <tr>
-        <td class="col-lg-4" style="margin-top:10px; height:150px;" rowspan="3"><img src='{{ model.improve_proposal.url }}'></td>
-        <td class="col-lg-8" style="margin-top:10px; height:350px;" rowspan="7"><p>改善前：</p>
-          <img src='{{ model.improve_proposal.url }}'>
+        <td class="col-lg-4" style="margin-top:10px; " rowspan="3"><img src='{{ model.improve_proposal.url }}'></td>
+        <td class="col-lg-8" style="margin-top:10px; " rowspan="7"><p>改善前：</p>
+          <div align="center"><img src='{{ model.improve_proposal.url }}'></div>
           <p>改善后：</p>
-          <img src='{{ model.improve_proposal.url }}'></td>
-        </tr>
-      <tr>
-         
-        
+          <div align="center"><img src='{{ model.improve_proposal.url }}'></div></td>
+      </tr>
+      <tr> 
       </tr>
       <tr>
-         
-        
-        
       </tr>
       <tr>
-         <td class="col-lg-4" style="margin-top:10px; height:50px;" rowspan="1"><div align="center">
+         <td class="col-lg-4" style="margin-top:10px;" rowspan="1">
+         <div align="center">
          <h3>标准工位达标率</h3>
-           </div>
+         </div>
+         </td>
       </tr>
-	   <tr>
-         <td class="col-lg-4" style="margin-top:10px; height:150px;" rowspan="3">{{ model.attainment_rate }}=标准工位数/工区总工位数</th>
-        
-        
-           <p>&nbsp;</p>
-           <p>&nbsp;</p>
+	    <tr>
+         <td class="col-lg-4" style="margin-top:10px; " rowspan="3">{{ model.attainment_rate }}=标准工位数/工区总工位数</td>
       </tr>
-	   <tr>
-         
-        
-        
+	    <tr>
       </tr>
-	   <tr>
-         
-        
-        
+	    <tr>       
       </tr>
     </tbody>
   </table>
-
-<hr>
-
-    
+  
 <br>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

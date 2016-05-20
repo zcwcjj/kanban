@@ -1,24 +1,83 @@
 <!DOCTYPE html>
-<!-- saved from url=(0079)file:///C:/Users/Administrator/Desktop/Bootstrap%20Theme%20%20The%20Band%20.htm -->
-<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>看板</title>
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/bootstrap.min.css">
-<script src="{{ STATIC_URL }}html/js/bootstrap.min.js"></script>
 <script src="{{ STATIC_URL }}html/js/jquery-1.7.2.min.js"></script>
+<script src="{{ STATIC_URL }}html/js/jquery.cookie.js"></script>
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/stdtheme.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}html/css/w3-fix.css">
+<script src="{{ STATIC_URL }}html/js/bootstrap.min.js"></script>
+   
+   
 <script type="text/javascript">
-  
 function choose(page)
 {
   baseurl = "/screen/page/" + page.toString();
   $("#ifr").attr("src",baseurl);
 }
+
+
+timerStatus=self.setInterval("getstatus()",2000);
+function getstatus () {
+  $.ajax({
+    url: "/screen/status",
+    dataType: "jsonp",
+    type:"GET",
+    success: function(json)
+    {
+
+      $("#status").html("工作状态："+json);
+
+    }
+
+  })
+  // body...
+}
+
+
+
+
+timer=self.setInterval("clock()",3000);
+
+index = 1;
+function clock()
+  {
+    index = index +1;
+    if (index == 10)
+      index = 1;
+    choose(index);
+
+  
+  }
+
+function starttimer()
+{
+  cleartimer();
+  timer=self.setInterval("clock()",3000);
+
+}
+  function cleartimer() {
+
+    self.clearInterval(timer);
+  }
+
 </script>
+
+
+
 <script type="text/javascript" language="javascript">   
   
+function rejoin()
+{
+  
+window.location = "/screen/index";
+
+}
+
 </script>
 
 
@@ -136,38 +195,69 @@ a.up-arrow:hover {
 <body>
 <div class="w3-container top" style="height:100px;">
 <div class="col-lg-3"><img src="{{ STATIC_URL }}html/images/logo.PNG" height="75px;"></div>
-<h1 align="center" class="col-lg-6"><strong>制造车间工区信息系统看板</strong></h1>
+<h1 align="center" class="col-lg-6"><strong>制造车间工区信息系统</strong> </h1>
+<div class="col-lg-3" id="time1" style="padding:30px;">
+                     
+        <script> 
+         setInterval("document.getElementById('time1').innerHTML = new Date().toLocaleString();", 1000);
+        </script></div>
 </div>
 
 <div class="w3-col w3-slim" id="leftmenu" style="padding-top: 44px; display: none;">
 
 <div id="leftmenuinner" style="padding-top: 44px;">
-<div class="w3-light-grey" style="margin-top:55px; width:200px; height:800px;">
-<a href="javascript:void(0)" onClick="close_menu()" class="w3-closebtn w3-hide-large w3-large" style="padding:3px 12px;"></a>
-<h5 class="left" align="center"><span class="left_h2"><strong>看板导航</strong></span></h5>
-<a target="_top" href="javascript:void(0);" onClick="choose('1')"><div align="center" style="margin-right:20px;">工区简介</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('2')"><div align="center" style="margin-right:20px;">产品介绍</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('3')"><div align="center" style="margin-right:20px;">生产计划</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('4')"><div align="center" style="margin-right:20px;">人员职责</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('5')"><div align="center" style="margin-right:20px;">设备管理</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('6')"><div align="center" style="margin-right:20px;">工艺布局</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('7')"><div align="center" style="margin-right:20px;">工位危险源</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('8')"><div align="center" style="margin-right:20px;">改善提案</div></a>
-<a target="_top" href="javascript:void(0);" onClick="choose('9')"><div align="center" style="margin-right:20px;">合格率统计</div></a>
+<div class="w3-light-grey" style="margin-top:55px; width:200px; height:1000px;">
 
+<div class="panel-group" id="accordion">
+<div class="panel panel-default">
+  <div class="panel-heading">
+  	<div class="panel-title">
+	<a href="#collapseOne" data-toggle="collapse" data-parent="#accordion"><strong>看板导航</strong>
+  </a></div></div>
+  
+  <div id="collapseOne" class="panel-collapse collapse in">
+  <div class="panel-body">
+  <a target="_top" href="javascript:void(0);" onClick="choose('1')" class="list-group-item">工区简介</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('2')" class="list-group-item">产品介绍</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('3')" class="list-group-item">生产计划</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('4')" class="list-group-item">人员职责</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('5')" class="list-group-item">生产要素</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('6')" class="list-group-item">工艺布局</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('7')" class="list-group-item">危险源图</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('8')" class="list-group-item">改善提案</a>
+  <a target="_top" href="javascript:void(0);" onClick="choose('9')" class="list-group-item">质量管理</a>
+  </div>
+  	</div></div>
+	
+	<div class="panel panel-default">
+  <div class="panel-heading">
+  	<div class="panel-title">
+	<a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion"><strong>功能</strong>
+  </a></div></div>
+	<div id="collapseTwo" class="panel-collapse collapse">
+  	<div class="panel-body">
+  <a target="_top" href="javascript:void(0);" onClick="starttimer()" class="list-group-item">自动播放</a>
+  <a target="_top" href="javascript:void(0);" onClick="cleartimer()" class="list-group-item">停止播放</a>
+	<a target="_top" href="javascript:void(0);" onClick="rejoin()" class="list-group-item">退出本地</a>
 
-
-<br><br></div></div></div>
+  </div></div></div>
+	
+	
 </div>
+</div>
+</div>
+</div>
+
+
 <div class="col-lg-10" align="center" style="margin-top:10px;">
 <div class="btncon">
 
 <a target="_blank" class="btn btn-default"><h3>工区：{{ model.name }}</h3></a>
-<a target="_blank" class="btn btn-default"><h3>工作状态：{{ model.statusNow }}</h3></a></div>
+<a target="_blank" class="btn btn-default"><h3 id="status">工作状态：{{ model.statusNow }}</h3></a></div>
 </div>
 
 <div class="Backstage-main">
-        <iframe name="ifr" id="ifr" src="/screen/page/3" class="col-lg-10" scrolling=no  style="margin-left:220px; height:640px; border:0px;">
+        <iframe name="ifr" id="ifr" src="/screen/page/3" class="col-lg-10" scrolling=no  style="margin-left:220px; height:780px; border:0px;">
 		</iframe>
 </div>
 
@@ -176,10 +266,10 @@ a.up-arrow:hover {
 
 <div class="footer w3-container w3-white">
 <div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;"></div></div>
-<div class="w3-example" style="margin-top:10px;">
+<div class="w3-example" style="margin-bottom:10px;">
 <div class="col-lg-12" align="right">
-<div align="right">南京中车浦镇海泰制动设备有限公司</div>
-<p align="right" style="font-size:16px;">CRRC NANJING PUZHEN HAITAI BRAKE EQUIPMENT CO..LTD</p>
+<div align="right"><img src="{{ STATIC_URL }}html/images/logo31.png" height="75px;"></div>
+
 
 
 </div>
