@@ -1,8 +1,13 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+
+
+
 # Create your models here.
 # 工位状态
+
+
 class AreaStatus(models.Model):
 	state = models.CharField('产品状态', max_length=30)
 	def __str__(self):

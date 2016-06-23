@@ -92,3 +92,9 @@ def getstatus(request):
 	httpR = HttpResponse("%s(\"%s\")" % (funcname,str(model.statusNow)))
 	# httpR.set_cookie("areaid", "1", 100000)
 	return httpR
+
+from django.core.signals import request_finished
+from django.dispatch import receiver
+@receiver(request_finished)
+def mycallback(sender, **kwargs):
+	print("---------------------request finished!")

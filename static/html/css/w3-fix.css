@@ -1,5 +1,5 @@
 ﻿div.top {
-    padding-top:20px;
+    padding-top:5px;
 }
 div.top img{
     margin-bottom:15px;
@@ -17,8 +17,11 @@ a:link, a:visited {
 .img-responsive {
     display:inline;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
     line-height:1.5;
+}
+h3 {
+	line-height:0.8;
 }
 @media (max-width: 992px){
 .top {

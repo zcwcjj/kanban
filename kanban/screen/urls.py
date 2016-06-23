@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^index', views.choose_area),
     url(r'^status', views.getstatus),
     
+    
 
 ]

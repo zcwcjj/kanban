@@ -131,11 +131,12 @@ a.up-arrow:hover {
         
       </tr>
       <tr>
-        <td class="col-lg-4" style="margin-top:10px; " rowspan="3"><img src='{{ model.improve_proposal.url }}'></td>
-        <td class="col-lg-8" style="margin-top:10px; " rowspan="7"><p>改善前：</p>
-          <div align="center"><img src='{{ model.improve_proposal.url }}'></div>
+        <td class="col-lg-4" style="margin-top:10px; " rowspan="3"><img src='{{ model.improve_proposal.url }}' width="100%"></td>
+        <td class="col-lg-8" style="margin-top:10px; " rowspan="7">
+          <p>改善前：</p>
+          <div  align="center" style="margin-bottom:10px;"><img src='{{ model.improve_proposal.url }}'></div>
           <p>改善后：</p>
-          <div align="center"><img src='{{ model.improve_proposal.url }}'></div></td>
+          <div align="center"><img style="margin-bottom:0px" src='{{ model.improve_proposal.url }}'></div></td>
       </tr>
       <tr> 
       </tr>
