@@ -22,6 +22,14 @@
 	<option value="{{ area.id }}"> {{ area.name}}</option>
 	{% endfor %}
 </select>
+
+<form enctype="multipart/form-data" method="POST" >
+{% csrf_token %}
+{{ form.as_table}}
+<input type='submit' value='Submit' class='btn'>
+</form>
+
+
 <img src="{{ arealist.0.process_discipline.url }}">
 <button onClick="setLocation()"></button>
 </body>

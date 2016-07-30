@@ -137,28 +137,30 @@ a.up-arrow:hover {
 	 <tr>
 	 	<td class="col-lg-4" style="margin-left:5px; margin-top:10px;"><table class="table table-bordered">
           <tr>
-            <td rowspan="2" class="col-lg-3"><div align="center">
-              <p>产品</p>
-              <p>名称</p>
+            <td rowspan="2" class="col-lg-2"><div align="center">
+              <p><h4>产品</h4></p>
+              <p><h4>名称</h4></p>
             </div></td>
-            <td colspan="4" class="col-lg-8"><div align="center">项目内容</div></td>
+            <td colspan="5" class="col-lg-10"><div align="center"><h4>项目内容</h4></div></td>
           </tr>
           <tr>
-		  	     <td class="col-lg-2 col-sm-2 col-md-2"><div align="center">计划编号</div></td>
-            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center">计划产量</div></td>
-            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center">已完成</div></td>
-            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center">是否新造</div></td>
+            <td class="col-lg-2 col-sm-2 col-md-2""><div align="center"><h4>开工时间</h4></div></td>
+	  	      <td class="col-lg-2 col-sm-2 col-md-2"><div align="center"><h4>操作员</h4></div></td>
+            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center"><h4>计划产量</h4></div></td>
+            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center"><h4>已完成</h4></div></td>
+            <td class="col-lg-2 col-sm-2 col-md-2"><div align="center"><h4>是否新造</h4></div></td>
           </tr>
           {% for singleplan in planList %}
           <tr>
             <td><div align="center">{{ singleplan.product.name }}</div></td>
-			<td><div align="center"></div></td>
+			     <td><div align="center"><h4>{{ singleplan.produce_date|date:"d/m H:i" }}</h4></div></td>
+            <td><div align="center"><h4>{{ singleplan.workers }}</h4></td>
             <td><div align="center">{{ singleplan.plan }}</div></td>
-            <td> <div align="center">{{ singleplan.excuted }}</div></td>
+            <td><div align="center">{{ singleplan.excuted }}</div></td>
             <td><div align="center">{%  if singleplan.isnew  %}
-            新造
+            <h4>新造</h4>
             {% else %}
-            检修
+            <h4>检修</h4>
             {% endif %}
             </div></td>
           </tr>

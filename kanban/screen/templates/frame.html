@@ -38,18 +38,66 @@ function getstatus () {
   // body...
 }
 
+recurlist =[1,2,3,4,5,6,7,8,9];
+
+
+timerRefresh=self.setInterval("getrefresh()",5000);
+function getrefresh () {
+  $.ajax({
+    url: "/screen/refresh",
+    dataType: "jsonp",
+    type:"GET",
+    success: function(json)
+    {
+     
+      
+      if ((json.ref==1) && (Date.parse(timestamp) <Date.parse(json.timestamp))) 
+        {
+          
+          location.reload();
+        }
+      
+
+
+    }
+
+  })
+  // body...
+}
+
+$.ajax({
+    url: "/screen/refresh",
+    dataType: "jsonp",
+    type:"GET",
+    success: function(json)
+    {
+      
+      
+      //if ((json.ref==1) && (timestamp <Date.parse(json.timestamp))) 
+        
+          recurlist = json.list;
+          timestamp = json.timestamp;
+         //location.reload();
+        
+      
+
+
+    }
+
+  })
 
 
 
 timer=self.setInterval("clock()",3000);
 
-index = 1;
+index = 0;
 function clock()
   {
     index = index +1;
-    if (index == 10)
-      index = 1;
-    choose(index);
+    if (index >= recurlist.length)
+      index = 0;
+    //alert(recurlist[index]);
+    choose(recurlist[index]);
 
   
   }
@@ -257,7 +305,7 @@ a.up-arrow:hover {
 </div>
 
 <div class="Backstage-main">
-        <iframe name="ifr" id="ifr" src="/screen/page/3" class="col-lg-10" scrolling=no  style="margin-left:220px; height:850px; border:0px;">
+        <iframe name="ifr" id="ifr" src="/screen/page/1" class="col-lg-10" scrolling=no  style="margin-left:220px; height:850px; border:0px;">
 		</iframe>
 </div>
 

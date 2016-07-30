@@ -83,6 +83,8 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'njht',
         'HOST': '10.19.6.75',
+        'DEFAULT_CHARSET': 'utf-8',
+
     }
 }
 

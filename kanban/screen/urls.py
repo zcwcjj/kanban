@@ -7,6 +7,8 @@ urlpatterns = [
     url(r'^page/([0-9]{1})/$', views.get_page),
     url(r'^index', views.choose_area),
     url(r'^status', views.getstatus),
+    url(r'^refresh', views.getRefresh),
+    url(r'^test/id/([0-9])', views.test),
     
     
 
